@@ -1,0 +1,38 @@
+
+.trainer {
+    display: grid;
+    grid-row-gap: 58px;
+}
+
+.trainer-word-container {
+    width: 100%;
+    height: 188px;
+    background: rgba(82, 137, 181, 0.6);
+    text-align: center;
+    display: grid;
+    align-content: center;
+    grid-row-gap: 15px;
+}
+
+.trainer-word {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 47px;
+    color: #1F3541;
+}
+
+.trainer-word-translation {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    color: #1F3541;
+}
+
+.trainer-card {
+    justify-self: center;
+    /*pointer-events: all;*/
+}
