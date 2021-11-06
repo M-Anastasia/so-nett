@@ -9,7 +9,7 @@ const mapStateToProps = (state: IReducer) => {
 };
 const mapDispatchToProps = (dispatch: AppDispatch) => {
     return {
-        setData: () => dispatch({type: 'GET_NEXT_DATA'}),
+        setData: (index: number) => dispatch({type: 'GET_NEXT_DATA', index: index}),
     }
 };
 const connector = connect(mapStateToProps, mapDispatchToProps);

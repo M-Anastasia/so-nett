@@ -2,8 +2,9 @@ import React, {useEffect, useRef} from "react";
 import s from "../card.module.css";
 import {ITestDataCard} from "../../../interfaces/interfaces";
 import {PropsFromRedux} from "../../../containers/card/card-back";
+import TestData from "../../../data/test_data";
 
-const CardBack = (props: ITestDataCard & { setData: () => void; } & PropsFromRedux) => {
+const CardBack = (props: ITestDataCard & { setData: (a0: number) => void; } & PropsFromRedux) => {
 
     const cardBackRef = useRef<HTMLDivElement>(null);
     const refVerbCont = useRef<HTMLDivElement>(null);
@@ -19,7 +20,7 @@ const CardBack = (props: ITestDataCard & { setData: () => void; } & PropsFromRed
     const handleCardBackClick = () => {
         cardBackRef.current!.style.visibility = 'hidden';
         setTimeout(() => {
-            props.setData();
+            props.setData(Math.floor(Math.random() * TestData.length));
             cardBackRef.current!.style.visibility = 'visible';
         }, 500);
     }

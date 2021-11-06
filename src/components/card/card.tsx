@@ -4,7 +4,7 @@ import {ITestDataCard} from "../../interfaces/interfaces";
 import CardFront from "./card-front/card-front";
 import {CardBack} from "../../containers/card/card-back";
 
-const Card = (props: ITestDataCard & { setData: () => void; }) => {
+const Card = (props: ITestDataCard & { setData: (a0: number) => void; }) => {
 
     return (
         <label>

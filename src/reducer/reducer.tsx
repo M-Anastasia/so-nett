@@ -4,7 +4,7 @@ import {AnyAction, combineReducers} from "redux";
 const cardReducer = function (state = TestData[0], action: AnyAction) {
     switch (action.type) {
         case "GET_NEXT_DATA":
-            return TestData[Math.floor(Math.random() * TestData.length)];
+            return TestData[action.index];
         default:
             return state;
     }
