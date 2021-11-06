@@ -1,19 +1,17 @@
-import React from 'react';
+import React, {RefObject} from 'react';
 import s from './card.module.css';
-import {ITestDataCard} from "../../interfaces/interfaces";
 import CardFront from "./card-front/card-front";
 import {CardBack} from "../../containers/card/card-back";
+import {PropsCard} from "../../containers/main/main";
 
-const Card = (props: ITestDataCard & { setData: (a0: number) => void; }) => {
+const Card = (props: PropsCard & { checkBoxRef: RefObject<HTMLInputElement> }) => {
 
     return (
         <label>
-            <input type="checkbox"/>
+            <input type="checkbox" ref={props.checkBoxRef}/>
             <div className={s["card"]}>
-                <CardFront tense={props.tense} pronoun={props.pronoun} verbConjugation={props.verbConjugation}/>
-                <CardBack tense={props.tense} pronoun={props.pronoun} verbConjugation={props.verbConjugation}
-                          setData={props.setData}
-                />
+                <CardFront {...props}/>
+                <CardBack {...props}/>
             </div>
         </label>
     )

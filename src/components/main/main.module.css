@@ -2,6 +2,7 @@
 .trainer {
     display: grid;
     grid-row-gap: 58px;
+    outline: none;
 }
 
 .trainer-word-container {

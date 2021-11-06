@@ -4,14 +4,18 @@ import {AppDispatch, IReducer} from "../../interfaces/interfaces";
 
 const mapStateToProps = (state: IReducer) => {
     return {
-        data: state.cardReducer,
+        card: state.cardReducer,
+        cardBack: state.cardBackReducer,
+        isCardChecked: state.inputCheckedReducer
     };
 };
 const mapDispatchToProps = (dispatch: AppDispatch) => {
     return {
-        setData: (index: number) => dispatch({type: 'GET_NEXT_DATA', index: index}),
+        setCardData: (index: number) => dispatch({type: 'GET_NEXT_DATA', index: index}),
+        setCardBackData: (index: number) => dispatch({type: 'SET_CARD_BACK_DATA', index: index}),
+        changeIsChecked: () => dispatch({type: 'CHANGE_IS_CHECKED'})
     }
 };
 const connector = connect(mapStateToProps, mapDispatchToProps);
-export type PropsFromRedux = ConnectedProps<typeof connector>
+export type PropsCard = ConnectedProps<typeof connector>
 export const Main = connector(MainComponent);

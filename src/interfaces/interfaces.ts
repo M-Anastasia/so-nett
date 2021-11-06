@@ -14,6 +14,8 @@ export interface ITestDataCard {
 export interface IReducer {
     cardReducer: ITestDataHead & ITestDataCard;
     fontSizeReducer: string;
+    inputCheckedReducer: boolean;
+    cardBackReducer: ITestDataHead & ITestDataCard;
 }
 
 export type AppDispatch = typeof store.dispatch

@@ -19,5 +19,5 @@ const mapDispatchToProps = (dispatch: AppDispatch) => {
     }
 };
 const connector = connect(mapStateToProps, mapDispatchToProps);
-export type PropsFromRedux = ConnectedProps<typeof connector>
+export type PropsFont = ConnectedProps<typeof connector>
 export const CardBack = connector(CardBackComponent);

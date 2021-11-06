@@ -10,6 +10,24 @@ const cardReducer = function (state = TestData[0], action: AnyAction) {
     }
 };
 
+const cardBackReducer = function (state = TestData[0], action: AnyAction) {
+    switch (action.type) {
+        case "SET_CARD_BACK_DATA":
+            return TestData[action.index];
+        default:
+            return state;
+    }
+};
+
+const inputCheckedReducer = function (state = false, action: AnyAction) {
+    switch (action.type) {
+        case "CHANGE_IS_CHECKED":
+            return !state;
+        default:
+            return state;
+    }
+}
+
 const fontSizeReducer = function (state = '', action: AnyAction) {
     switch (action.type) {
         case "BACK_TO_FULL_SIZE":
@@ -24,4 +42,6 @@ const fontSizeReducer = function (state = '', action: AnyAction) {
 export const reducer = combineReducers({
     cardReducer,
     fontSizeReducer,
+    cardBackReducer,
+    inputCheckedReducer
 })
