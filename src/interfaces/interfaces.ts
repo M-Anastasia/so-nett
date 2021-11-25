@@ -8,10 +8,12 @@ export interface ITestDataHead {
 export interface ITestDataCard {
     tense: string;
     pronoun: string;
-    verbConjugation: string;
+    conjugation: string;
 }
 
 export interface IReducer {
+    testDataReducer: Array<ITestDataHead & ITestDataCard>;
+    cardsReadReducer: number;
     cardReducer: ITestDataHead & ITestDataCard;
     fontSizeReducer: string;
     inputCheckedReducer: boolean;

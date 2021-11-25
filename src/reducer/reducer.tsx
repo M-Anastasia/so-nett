@@ -1,10 +1,30 @@
 import TestData from "../data/test_data";
 import {AnyAction, combineReducers} from "redux";
 
+const testDataReducer = function (state = TestData, action: AnyAction) {
+    switch (action.type) {
+        case "SET_TEST_DATA":
+            return action.testData;
+        default:
+            return state;
+    }
+}
+
+const cardsReadReducer = function (state = 0, action: AnyAction) {
+    switch (action.type) {
+        case "INC_CARDS_READ":
+            return state + 1;
+        case "BACK_TO_START":
+            return 0;
+        default:
+            return state;
+    }
+}
+
 const cardReducer = function (state = TestData[0], action: AnyAction) {
     switch (action.type) {
         case "GET_NEXT_DATA":
-            return TestData[action.index];
+            return action.testData[action.index];
         default:
             return state;
     }
@@ -13,7 +33,7 @@ const cardReducer = function (state = TestData[0], action: AnyAction) {
 const cardBackReducer = function (state = TestData[0], action: AnyAction) {
     switch (action.type) {
         case "SET_CARD_BACK_DATA":
-            return TestData[action.index];
+            return action.testData[action.index];
         default:
             return state;
     }
@@ -40,6 +60,8 @@ const fontSizeReducer = function (state = '', action: AnyAction) {
 };
 
 export const reducer = combineReducers({
+    testDataReducer,
+    cardsReadReducer,
     cardReducer,
     fontSizeReducer,
     cardBackReducer,

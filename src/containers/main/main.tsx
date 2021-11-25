@@ -1,9 +1,11 @@
 import {connect, ConnectedProps} from "react-redux";
 import MainComponent from "../../components/main/main";
-import {AppDispatch, IReducer} from "../../interfaces/interfaces";
+import {AppDispatch, IReducer, ITestDataCard, ITestDataHead} from "../../interfaces/interfaces";
 
 const mapStateToProps = (state: IReducer) => {
     return {
+        testData: state.testDataReducer,
+        cardsRead: state.cardsReadReducer,
         card: state.cardReducer,
         cardBack: state.cardBackReducer,
         isCardChecked: state.inputCheckedReducer
@@ -11,8 +13,11 @@ const mapStateToProps = (state: IReducer) => {
 };
 const mapDispatchToProps = (dispatch: AppDispatch) => {
     return {
-        setCardData: (index: number) => dispatch({type: 'GET_NEXT_DATA', index: index}),
-        setCardBackData: (index: number) => dispatch({type: 'SET_CARD_BACK_DATA', index: index}),
+        setTestData: (testData: Array<ITestDataHead & ITestDataCard>) => dispatch({type: 'SET_TEST_DATA', testData: testData}),
+        incCardsRead: () => dispatch({type: 'INC_CARDS_READ'}),
+        resetCardsRead: () => dispatch({type: 'BACK_TO_START'}),
+        setCardData: (index: number, testData: Array<ITestDataHead & ITestDataCard>) => dispatch({type: 'GET_NEXT_DATA', index: index, testData: testData}),
+        setCardBackData: (index: number, testData: Array<ITestDataHead & ITestDataCard>) => dispatch({type: 'SET_CARD_BACK_DATA', index: index, testData: testData}),
         changeIsChecked: () => dispatch({type: 'CHANGE_IS_CHECKED'})
     }
 };

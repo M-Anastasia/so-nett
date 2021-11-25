@@ -16,7 +16,7 @@
 }
 
 .trainer-word {
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 40px;
@@ -25,7 +25,7 @@
 }
 
 .trainer-word-translation {
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;

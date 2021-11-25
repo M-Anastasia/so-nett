@@ -2,24 +2,16 @@ label {
     width: 235px;
     height: 286px;
     perspective: 1000px;
-
     transform-style: preserve-3d;
     display: block;
-    /*position: absolute;*/
     cursor: pointer;
 }
 
 .card {
-    /*width: 235px;*/
-    /*height: 286px;*/
-    /*perspective: 1000px;*/
     position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
-    /*transition: transform 1s;*/
-    /*transform-style: preserve-3d;*/
-
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     -webkit-transition: all 600ms;
@@ -27,22 +19,14 @@ label {
     z-index: 20;
 }
 
-
-/*ddd*/
 .card .card-front, .card-back {
     position: absolute;
     height: 100%;
     width: 100%;
-    /*background: #FFF;*/
-    /*text-align: center;*/
-    /*line-height: 200px;*/
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    /*border-radius: 2px;*/
 }
 .card .card-back {
-    /*background: #222;*/
-    /*color: #FFF;*/
     -webkit-transform: rotateX(180deg);
     transform: rotateY(180deg);
     pointer-events: all;
@@ -62,12 +46,6 @@ input {
 label:hover :checked + .card {
 
 }
-/*ddd*/
-
-
-
-
-
 
 .card-front, .card-back {
     position: absolute;
@@ -80,23 +58,13 @@ label:hover :checked + .card {
     display: grid;
     align-items: center;
     justify-content: center;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
-/*.card-front {*/
-/*    transition: transform 0.8s;*/
-/*    transform-style: preserve-3d;*/
-/*}*/
-
-/*.card-back {*/
-/*    transform: rotateY(180deg);*/
-/*}*/
-
 .card-pronoun {
     justify-self: center;
-    /* font-size: 20px; */
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
@@ -105,21 +73,30 @@ label:hover :checked + .card {
 }
 
 .card-verb-container {
-    /*background: rgba(175, 216, 242, 0.25);*/
-    /*filter: blur(4px);*/
     width: 181px;
     height: 130px;
     position: relative;
     display: grid;
     font-size: 40px;
-    /* text-align: center; */
     align-content: center;
 }
 
+.card-tens-container {
+    height: 25px;
+    position: relative;
+    display: grid;
+    align-content: center;
+    justify-self: center;
+}
+
+.card-tens-container p {
+    position:relative;
+    z-index:1;
+}
+
 .card-verb {
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-weight: normal;
-    /*font-size: 40px;*/
     line-height: 54px;
     color: #1F3541;
     text-align: center;
@@ -144,14 +121,10 @@ label:hover :checked + .card {
 
 .card-conjugation {
     justify-self: center;
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
     line-height: 18px;
     color: #1F3541;
 }
-
-/*.card-container:checked .card {*/
-/*    transform: rotateY(180deg); !* <=>  rotateY(.5turn) *!*/
-/*}*/
